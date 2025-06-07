@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Omar's Bookmarks</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/Css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/Css/style.css" />
+  </head>
+  <body>
+    <div class="container py-5">
+      <div class="text-center mb-5">
+        <h1 class="main-title">Smart Bookmarks</h1>
+      </div>
+
+      <div class="outer-dashed p-4 rounded">
+        <h2 class="section-title text-center mb-4">
+          <i class="fa-solid fa-bookmark text-success"></i>
+          <span class="highlighted-text">Bookmark your favorite sites</span>
+          <i class="fa-solid fa-bookmark text-warning"></i>
+        </h2>
+
+        <!-- Bookmark Name -->
+        <label for="siteTitle" class="label-text-style"
+          ><i class="fa-solid fa-book-bookmark pe-2"></i> Site Title</label
+        >
+        <input
+          type="text"
+          id="siteTitle"
+          class="form-control mt-2"
+          placeholder="Enter site name"
+        />
+
+        <!-- Bookmark URL -->
+        <label for="siteLink" class="label-text-style mt-4"
+          ><i class="fa-solid fa-link pe-2"></i> Site URL</label
+        >
+        <input
+          type="text"
+          id="siteLink"
+          class="form-control mt-2"
+          placeholder="Enter valid site URL"
+        />
+
+        <!-- Submit Button -->
+        <div class="text-center mt-4">
+          <button id="addBookmarkBtn" class="btn btn-submit">
+            Add Bookmark
+          </button>
+        </div>
+      </div>
+
+      <!-- Table Display -->
+      <table class="table table-striped text-center mt-5">
+        <thead class="bg-light">
+          <tr>
+            <th>#</th>
+            <th>Site Name</th>
+            <th>Visit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody id="bookmarksTableBody"></tbody>
+      </table>
+    </div>
+
+    <!-- Validation Modal -->
+    <div id="validationModal" class="modal fade shadow" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-4">
+          <div class="modal-header border-0 pb-0">
+            <h5 class="modal-title text-danger fw-bold">
+              <i class="fa-solid fa-triangle-exclamation me-2"></i>
+              Invalid Input
+            </h5>
+            <button
+              type="button"
+              class="btn-close close-modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p class="mb-3">Please make sure the following are correct:</p>
+            <ul class="list-unstyled ps-3">
+              <li class="mb-2">
+                <i class="fa-solid fa-circle-xmark text-danger me-2"></i>
+                Site name must be at least <strong>3 characters</strong>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-xmark text-danger me-2"></i>
+                URL must be valid <strong>(start with http/https)</strong>
+              </li>
+            </ul>
+          </div>
+          <div class="modal-footer border-0 pt-0"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/Js/bootstrap.bundle.min.js"></script>
+    <script src="/Js/script.js"></script>
+  </body>
+</html>
